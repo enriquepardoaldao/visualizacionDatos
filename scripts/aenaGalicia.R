@@ -445,8 +445,10 @@ companias_visualizacion <- dependencia_companias %>%
 # Se crea una carpeta de resultados si no existe y se exportan todas
 # las tablas necesarias para Flourish y para justificar el análisis.
 
-if (!dir.exists("resultados")) {
-  dir.create("resultados")
+ruta_resultados <- file.path(dirname(getwd()), "resultados")
+
+if (!dir.exists(ruta_resultados)) {
+  dir.create(ruta_resultados)
 }
 
 write_xlsx(
@@ -471,7 +473,7 @@ write_xlsx(
     top5_companias = top5_companias,
     companias_visualizacion = companias_visualizacion
   ),
-  "../resultados/Analisis_Aeropuertos_Galicia.xlsx"
+  file.path(ruta_resultados, "Analisis_Aeropuertos_Galicia.xlsx")
 )
 
 
