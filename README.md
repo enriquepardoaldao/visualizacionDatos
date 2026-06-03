@@ -43,6 +43,22 @@ install.packages(c("tidyverse", "ggplot2", "readxl", "knitr", "rmarkdown"))
 
 ---
 
+Cómo ver la web en local
+La web está publicada en GitHub Pages y puede verse directamente en el enlace de arriba. Si prefieres ejecutarla en local, necesitas un servidor local (no basta con hacer doble clic en el index.html).
+Opción A — Python (recomendada)
+Mac / Linux: Python viene instalado por defecto.
+Windows: Comprueba si lo tienes abriendo el símbolo del sistema (cmd) y escribiendo python --version. Si no está instalado, descárgalo desde python.org y marca la opción "Add Python to PATH" durante la instalación.
+Una vez instalado, abre una terminal en la carpeta donde está el index.html y ejecuta:
+bashpython -m http.server 8000
+En Mac/Linux puede ser necesario usar python3 en lugar de python.
+Opción B — Node.js
+Descarga e instala Node.js desde nodejs.org (versión LTS recomendada). Luego ejecuta:
+bashnpx serve .
+Acceder a la web
+Con cualquiera de las dos opciones, abre el navegador en http://localhost:8000
+
+---
+
 ## Visualización
 
 La historia de datos está construida con **Flourish** y accesible de forma interactiva desde la web del proyecto. Incluye gráficos de evolución de pasajeros, comparativas entre aeropuertos y análisis de rutas.
