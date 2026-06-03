@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Necesita Galicia tres aeropuertos?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #1a1a1a;
+      --ink-light: #555;
+      --rule:      #d8d3c8;
+      --bg:        #faf9f6;
+      --bg-card:   #ffffff;
+      --accent:    #2b4c7e;
+      --accent-light: #e8edf5;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans:  'Source Sans 3', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding: 3.5rem 2rem 3rem;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .kicker {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--ink-light);
+      max-width: 620px;
+      font-weight: 300;
+    }
+
+    .meta {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      letter-spacing: 0.03em;
+      border-top: 1px solid var(--rule);
+      padding-top: 1rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      margin-top: 3.5rem;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    p {
+      color: var(--ink-light);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── FLOURISH EMBED ── */
+    .viz-wrapper {
+      margin-top: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .flourish-embed {
+      width: 100%;
+    }
+
+    /* ── VIDEO ── */
+    .video-wrapper {
+      margin-top: 1.5rem;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      max-width: 820px;
+      margin: 4rem auto 0;
+      padding: 2rem 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      margin: 0;
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      header, main, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+      h1 { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="kicker">Visualización de datos · Práctica final · Enrique Manuel Pardo Aldao</p>
+    <h1>¿Necesita Galicia tres aeropuertos?</h1>
+    <p class="lead">
+      Un análisis de los datos de tráfico aéreo en Galicia para comprender
+      si la red de tres aeropuertos —Santiago, A Coruña y Vigo— está
+      justificada o supone un solapamiento ineficiente de recursos públicos.
+    </p>
+    <div class="meta">
+      <span>Asignatura: Visualización de datos</span>
+      <span>Universitat Oberta de Catalunya</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SECCIÓN 1: VISUALIZACIÓN -->
+    <section id="visualizacion">
+      <p class="section-label">01 — Visualización interactiva</p>
+      <h2>Los datos detrás de la pregunta</h2>
+      <p>
+        La siguiente visualización explora la evolución del tráfico de pasajeros,
+        destinos y frecuencias en los tres aeropuertos gallegos. Navega por las
+        distintas pantallas para seguir el hilo de la historia.
+      </p>
+
+      <div class="viz-wrapper">
+        <div class="flourish-embed flourish-chart" data-src="story/3695901">
+          <script src="https://public.flourish.studio/resources/embed.js"></script>
+          <noscript>
+            <img src="https://public.flourish.studio/story/3695901/thumbnail" width="100%" alt="Visualización de datos sobre los aeropuertos de Galicia" />
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: VÍDEO -->
+    <section id="presentacion">
+      <p class="section-label">02 — Presentación</p>
+      <h2>Narración y conclusiones</h2>
+      <p>
+        En este vídeo se presenta el proceso de análisis, las decisiones de
+        diseño de la visualización y las principales conclusiones extraídas
+        de los datos.
+      </p>
+
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/DoFruUuLtGk?si=z-p_1RpiDljJd9x4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div>
+      <p class="footer-brand">¿Necesita Galicia tres aeropuertos?</p>
+      <p>Práctica de visualización de datos · 2025–2026</p>
+    </div>
+    <p>Elaborado con Flourish y datos públicos de AENA</p>
+  </footer>
+
+</body>
+</html>
