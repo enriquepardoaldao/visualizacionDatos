@@ -25,7 +25,7 @@ La web del proyecto está disponible en: **[https://enriquepardoaldao.github.io/
 Los datos provienen de fuentes públicas oficiales:
 
 - **AENA** — Estadísticas de tráfico de pasajeros, operaciones y carga por aeropuerto
-- **Ministerio de Transportes** — Datos históricos de conectividad aérea en España
+- https://www.aena.es/es/estadisticas/inicio.html
 
 ---
 
